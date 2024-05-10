@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="build/output.css" />
+  </head>
+  <body
+    class="bg-gradient-to-br from-sky-300 to-sky-950 flex h-screen justify-center items-center flex-col"
+  >
+    <div
+      class="relative -translate-y-full"
+      x-data="{radio:1 , activeClass: 'bg-white text-cyan-700 ring-2 ring-white/50 ring-offset-2 ring-offset-cyan-950/35 hover:bg-white/100 hover:text-cyan-700' }"
+    >
+      <div class="flex gap-2 bg-cyan-950/35 text-white p-2 rounded-lg">
+        <div
+          @click="radio=1"
+          :class="radio==1? activeClass :''"
+          class="tracking-wide cursor-pointer px-12 py-2 rounded-lg hover:bg-white/15"
+        >
+          Recent
+        </div>
+        <div
+          @click="radio=2"
+          class="tracking-wide cursor-pointer px-12 py-2 rounded-lg hover:bg-white/15"
+          :class="radio==2? activeClass  :''"
+        >
+          Popular
+        </div>
+        <div
+          @click="radio=3"
+          :class="radio==3? activeClass  :''"
+          class="tracking-wide cursor-pointer px-12 py-2 rounded-lg hover:bg-white/15"
+        >
+          Trending
+        </div>
+      </div>
+      <!-- recent -->
+      <div
+        class="bg-white p-4 absolute mt-4 w-full rounded-lg"
+        x-show="radio===1"
+        x-data="{open:'one'}"
+      >
+        <div
+          class="p-4 cursor-pointer hover:bg-gray-300/50 rounded-lg border-2 border-sky-900/0"
+          @click="open='two'"
+          :class="open==='two'?' border-sky-900/100 ':''"
+        >
+          <h2 class="font-semibold">Does drinking coffee make you smarter?</h2>
+          <span class="text-gray-600 text-sm"
+            >5h ago . 5 comments . 2 shares</span
+          >
+        </div>
+        <div
+          class="p-4 cursor-pointer hover:bg-gray-300/50 rounded-lg border-2 border-sky-900/0"
+          @click="open='three'"
+          :class="open==='three'?' border-sky-900/100 ':''"
+        >
+          <h2 class="font-semibold">So you've bought coffee... now what?</h2>
+          <span class="text-gray-600 text-sm"
+            >2h ago . 3 comments . 2 shares</span
+          >
+        </div>
+      </div>
+      <!-- popular -->
+      <div
+        class="bg-white p-4 absolute mt-4 w-full rounded-lg"
+        x-show="radio===2"
+        x-data="{open:'one'}"
+      >
+        <div
+          class="p-4 cursor-pointer hover:bg-gray-300/50 rounded-lg border-2 border-sky-900/0"
+          @click="open='two'"
+          :class="open==='two'?' border-sky-900/100 ':''"
+        >
+          <h2 class="font-semibold">Is tech making coffee better or worse?</h2>
+          <span class="text-gray-600 text-sm"
+            >Jan 7 . 29 comments . 16 shares</span
+          >
+        </div>
+        <div
+          class="p-4 cursor-pointer hover:bg-gray-300/50 rounded-lg border-2 border-sky-900/0"
+          @click="open='three'"
+          :class="open==='three'?' border-sky-900/100 ':''"
+        >
+          <h2 class="font-semibold">
+            The most innovative things happening in coffee
+          </h2>
+          <span class="text-gray-600 text-sm"
+            >Mar 15 . 24 comments . 12 shares</span
+          >
+        </div>
+      </div>
+      <!-- Trending -->
+      <div
+        class="bg-white p-4 absolute mt-4 w-full rounded-lg"
+        x-show="radio===3"
+        x-data="{open:'one'}"
+      >
+        <div
+          class="p-4 cursor-pointer hover:bg-gray-300/50 rounded-lg border-2 border-sky-900/0"
+          @click="open='two'"
+          :class="open==='two'?' border-sky-900/100 ':''"
+        >
+          <h2 class="font-semibold">
+            Ask Me Anything: 10 answers to your questions about coffee
+          </h2>
+          <span class="text-gray-600 text-sm"
+            >2d ago . 9 comments . 5 shares</span
+          >
+        </div>
+        <div
+          class="p-4 cursor-pointer hover:bg-gray-300/50 rounded-lg border-2 border-sky-900/0"
+          @click="open='three'"
+          :class="open==='three'?' border-sky-900/100 ':''"
+        >
+          <h2 class="font-semibold">
+            The most innovative things happening in coffee
+          </h2>
+          <span class="text-gray-600 text-sm"
+            >4d ago . 1 comments . 2 shares</span
+          >
+        </div>
+      </div>
+    </div>
+    <script src="../src/script.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </body>
+</html>
